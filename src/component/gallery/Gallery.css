@@ -1,0 +1,10 @@
+.galleryImage {
+  width: 400px;
+  height: 200px;
+  border: 1px solid red;
+  /* background-image: url("../../../public/static/image/starship.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; */
+  cursor: pointer;
+}
