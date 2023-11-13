@@ -27,7 +27,7 @@ export default function Walkthrough() {
 
   const change360 = (count) => {
     colorMap = useLoader(THREE.TextureLoader, `../static/360/i${count}.jpg`);
-    cube.current.material.map = colorMap;
+     cube.current.material.map = colorMap;
   };
 
   useCursor(hovered /*'pointer', 'auto', document.body*/);

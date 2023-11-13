@@ -8,7 +8,9 @@ const ImageModal = ({ setIsModalOn, selectedItem }) => {
                 <span id="closeModal" className="close" onClick={() => setIsModalOn(false)}>&times;</span>
                 <h2>Modal Title {selectedItem}</h2>
                 <p>This is some modal content.</p>
+                <div className='container360'>
                 <R3F_Walkthrough />
+                </div>
             </div>
         </div>
     </div>

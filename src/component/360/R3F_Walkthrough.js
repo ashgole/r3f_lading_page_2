@@ -7,7 +7,7 @@ import Walkthrough from "./Walkthrough";
 export default function R3F_Walkthrough() {
   return (
     <>
-      <Canvas style={{ height: "100vh" }}>
+      <Canvas>
         <OrbitControls enableZoom={false} />
         <Walkthrough />
       </Canvas>
