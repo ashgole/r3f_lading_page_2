@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/r3f_lading_page_2/static/css/main.19a0ec33.css",
+    "main.js": "/r3f_lading_page_2/static/js/main.76dd7602.js",
+    "index.html": "/r3f_lading_page_2/index.html",
+    "main.19a0ec33.css.map": "/r3f_lading_page_2/static/css/main.19a0ec33.css.map",
+    "main.76dd7602.js.map": "/r3f_lading_page_2/static/js/main.76dd7602.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.19a0ec33.css",
+    "static/js/main.76dd7602.js"
+  ]
+}
