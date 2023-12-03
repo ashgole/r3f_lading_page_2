@@ -11,8 +11,6 @@
   position: relative;
   left: 50%;
   top: 50%;
-  padding: 20px;
-  width: 800px;
   height: 500px;
   background-color: white;
   transform: translate(-50%, -50%);

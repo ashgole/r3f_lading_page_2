@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Html } from "@react-three/drei";
 import { directionMapAOImg, directionMapImg } from "../media/Media";
 
-const DirectionArrow = ({ change360, setHovered }) => {
+const DirectionArrow = ({ setCurrentIndex, setHovered }) => {
     //static
     let [directionMap, directionMapAO] = useLoader(THREE.TextureLoader, [
         directionMapImg,
@@ -22,7 +22,7 @@ const DirectionArrow = ({ change360, setHovered }) => {
                             rotation-x={-Math.PI * 0.5}
                             scale={1}
                             onClick={() => {
-                                change360(index + 1);
+                                setCurrentIndex(index + 1);
                             }}
                             onPointerOver={() => setHovered(true)}
                             onPointerOut={() => setHovered(false)}
@@ -37,7 +37,7 @@ const DirectionArrow = ({ change360, setHovered }) => {
                             />
                         </mesh>
                         <Html wrapperClass="label" zIndexRange={[2, 0]}>
-                            {"ashish" + index}
+                            {"image - " + index}
                         </Html>
                     </group>
                 </>

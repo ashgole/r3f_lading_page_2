@@ -10,7 +10,7 @@ import {
   OrbitControls,
   useCursor,
 } from "@react-three/drei";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Canvas, useLoader } from "@react-three/fiber";
 import { useState } from "react";
 import { DirectionArrow } from "./DirectionArrow";
@@ -18,7 +18,6 @@ import { i1, i2, i3 } from "../media/Media";
 
 
 export default function Walkthrough() {
-console.log('ok :',i1, i2, i3  );
   const cube = useRef();
 
   //assets
@@ -26,12 +25,28 @@ console.log('ok :',i1, i2, i3  );
 
   //state
   const [hovered, setHovered] = useState();
+  const [currentImage, setCurrentImage] = useState(i1);
+  const [currentIndex, setCurrentIndex] = useState(1);
 
-  const change360 = (count) => {
-    // colorMap = useLoader(THREE.TextureLoader, i2);
-    colorMap = useLoader(THREE.TextureLoader, `image${count}`);
+  useEffect(() => {
+    console.log('ok currentIndex:',currentIndex );
+    switch (currentIndex) {
+      case 1:
+        setCurrentImage(i1);
+        break;
+      case 2:
+        setCurrentImage(i2);
+        break;
+      case 3:
+        setCurrentImage(i3);
+        break;
+      default:
+        break;
+    }
+    colorMap = useLoader(THREE.TextureLoader, currentImage);
     cube.current.material.map = colorMap;
-  };
+  }, [currentIndex])
+
 
   useCursor(hovered /*'pointer', 'auto', document.body*/);
   return (
@@ -43,7 +58,7 @@ console.log('ok :',i1, i2, i3  );
         <sphereGeometry args={[50, 60, 40]} />
         <meshBasicMaterial map={colorMap} side={THREE.BackSide} />
       </mesh>
-      <DirectionArrow change360={change360} setHovered={setHovered} />
+      <DirectionArrow setCurrentIndex={setCurrentIndex} setHovered={setHovered} />
     </>
   );
 }

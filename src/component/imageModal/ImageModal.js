@@ -3,7 +3,7 @@ import './ImageModal.css'
 
 const ImageModal = ({ setIsModalOn, selectedItem }) => {
     return <div className="overlay">
-        <div className="modal">
+        <div className="modal w-3/4">
             <div className="modal-content">
                 <span id="closeModal" className="close" onClick={() => setIsModalOn(false)}>&times;</span>
                 <h2>Modal Title {selectedItem}</h2>
