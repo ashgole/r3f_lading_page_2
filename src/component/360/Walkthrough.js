@@ -28,8 +28,8 @@ console.log('ok :',i1, i2, i3  );
   const [hovered, setHovered] = useState();
 
   const change360 = (count) => {
-    colorMap = useLoader(THREE.TextureLoader, i2);
-    // colorMap = useLoader(THREE.TextureLoader, `image${count}`);
+    // colorMap = useLoader(THREE.TextureLoader, i2);
+    colorMap = useLoader(THREE.TextureLoader, `image${count}`);
     cube.current.material.map = colorMap;
   };
 
