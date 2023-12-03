@@ -2,12 +2,13 @@ import * as THREE from "three";
 import { useLoader } from "@react-three/fiber";
 import { useState } from "react";
 import { Html } from "@react-three/drei";
+import { directionMapAOImg, directionMapImg } from "../media/Media";
 
 const DirectionArrow = ({ change360, setHovered }) => {
     //static
     let [directionMap, directionMapAO] = useLoader(THREE.TextureLoader, [
-        `./static/images/directionMap.png`,
-        `./static/images/directionMapAO.png`,
+        directionMapImg,
+        directionMapAOImg,
     ]);
     //state
     const [walkArray,] = useState(["i1", "i2", "i3"]);

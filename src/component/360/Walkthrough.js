@@ -14,20 +14,23 @@ import { useRef } from "react";
 import { Canvas, useLoader } from "@react-three/fiber";
 import { useState } from "react";
 import { DirectionArrow } from "./DirectionArrow";
+import { i1, i2, i3 } from "../media/Media";
 
 
 export default function Walkthrough() {
+console.log('ok :',i1, i2, i3  );
   const cube = useRef();
 
   //assets
-  let [colorMap] = useLoader(THREE.TextureLoader, [`./static/360/i1.jpg`]);
+  let [colorMap] = useLoader(THREE.TextureLoader, [i1]);
 
   //state
   const [hovered, setHovered] = useState();
 
   const change360 = (count) => {
-    colorMap = useLoader(THREE.TextureLoader, `../static/360/i${count}.jpg`);
-     cube.current.material.map = colorMap;
+    colorMap = useLoader(THREE.TextureLoader, i2);
+    // colorMap = useLoader(THREE.TextureLoader, `image${count}`);
+    cube.current.material.map = colorMap;
   };
 
   useCursor(hovered /*'pointer', 'auto', document.body*/);

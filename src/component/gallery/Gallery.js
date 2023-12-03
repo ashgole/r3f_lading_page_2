@@ -5,7 +5,7 @@ import { ImageModal } from "../imageModal/ImageModal";
 export default function Gallery() {
   const [imageArray] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
   const [isModalOn, setIsModalOn] = useState(false)
-  const [selectedItem, setSelectedItem] = useState(0)
+  const [selectedItem, setSelectedItem] = useState(1)
   const [isHovered, setIsHovered] = useState(0)
 
   const selectItem = (itemIndex) => {
