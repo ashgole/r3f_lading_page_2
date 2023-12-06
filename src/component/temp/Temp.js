@@ -1,22 +1,25 @@
 import { useAtom } from 'jotai'
-import React, { useEffect } from 'react'
+import React, { memo, useEffect, useMemo } from 'react'
 import { priceAtom } from '../../static/jotai/Jotai'
 
-const InfoBox = ({ item }) => {
+const InfoBox = memo(({ item }) => {
+    console.log('ok item:', item.name);
     return <div>{item.id} {item.name}</div>
-}
+})
 
 export default function Temp() {
     const [priceA, setpriceA] = useAtom(priceAtom)
 
     const changeName = () => {
         setpriceA((prev) => {
-            console.log('ok :', prev);
-            prev['ash'] = {
-                ...prev['ash'],
-                name: 'ashish'
-            };
-            return prev
+            const updatePriceA = {
+                ...prev,
+                'ash': {
+                    ...prev['ash'],
+                    name: 'ashish'
+                }
+            }
+            return updatePriceA
         })
     }
 
